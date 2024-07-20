@@ -79,7 +79,7 @@ class NotesHandler {
     }
   }
 
-  deleteNoteByIdHanlder(request, h) {
+  deleteNoteByIdHandler(request, h) {
     try {
       const { id } = request.params;
       this._service.deleteNoteById(id);

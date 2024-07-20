@@ -56,7 +56,7 @@ class NotesService {
     };
   }
 
-  deleteNoteByIdHandler(id) {
+  deleteNoteById(id) {
     const index = this._notes.findIndex((note) => note.id === id);
 
     if (index === -1) {
