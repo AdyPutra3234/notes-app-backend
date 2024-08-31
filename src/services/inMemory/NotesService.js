@@ -31,12 +31,11 @@ class NotesService {
 
   getNoteById(id) {
     const note = this._notes.filter((n) => n.id === id);
-
-    if (!note) {
-      throw new Error('Catatan tidak ditemukan');
+    if (!note[0]) {
+      throw new Error('fail data not found');
     }
 
-    return note;
+    return note[0];
   }
 
   editNoteById(id, { title, body, tags }) {
