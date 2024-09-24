@@ -1,2 +1,4 @@
 node_modules
 NoteAppServer.pem
+.env
+.prod.env
