@@ -5,13 +5,13 @@ module.exports = {
   name: 'authentications',
   version: '1.0.0',
   register: async (server, {
-    authenticatioonsService,
+    authenticationsService,
     usersService,
     tokenManager,
     validator,
   }) => {
     const authenticationsHandler = new AuthenticationsHandler(
-      authenticatioonsService,
+      authenticationsService,
       usersService,
       tokenManager,
       validator,
