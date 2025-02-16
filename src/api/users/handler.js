@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 class UsersHandler {
   constructor(service, validator) {
     this._service = service;
@@ -5,6 +7,7 @@ class UsersHandler {
 
     this.postUserHandler = this.postUserHandler.bind(this);
     this.getUserByIdHandler = this.getUserByIdHandler.bind(this);
+    this.getUsersByUsernameHandler = this.getUsersByUsernameHandler.bind(this);
   }
 
   async postUserHandler(request, h) {
@@ -33,6 +36,18 @@ class UsersHandler {
       status: 'success',
       data: {
         user,
+      },
+    };
+  }
+
+  async getUsersByUsernameHandler(request, h) {
+    const { username = '' } = request.query;
+    const users = await this._service.getUsersByUsername(username);
+
+    return {
+      status: 'success',
+      data: {
+        users,
       },
     };
   }
